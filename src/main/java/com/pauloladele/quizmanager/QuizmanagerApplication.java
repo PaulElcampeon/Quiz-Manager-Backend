@@ -14,18 +14,18 @@ public class QuizmanagerApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(QuizmanagerApplication.class, args);
 	}
-//
-//	@Autowired
-//	private UserService userService;
-//
-//	@PostConstruct
-//	public void init() throws Exception {
-//		userService.removeUser("Restricted");
-//		userService.removeUser("View");
-//		userService.removeUser("Edit");
-//
-//		userService.createUserLvEdit(new CreateUserRequest("Edit", "Edit", "Edit", "Edit"));
-//		userService.createUserLvView(new CreateUserRequest("View", "View", "View", "View"));
-//		userService.createUserLvRestricted(new CreateUserRequest("Restricted", "Restricted", "Restricted", "Restricted"));
-//	}
+
+	@Autowired
+	private UserService userService;
+
+	@PostConstruct
+	public void init() throws Exception {
+		userService.removeUser("Restricted");
+		userService.removeUser("View");
+		userService.removeUser("Edit");
+
+		userService.createUserLvEdit(new CreateUserRequest("Edit", "Edit", "Edit", "Edit"));
+		userService.createUserLvView(new CreateUserRequest("View", "View", "View", "View"));
+		userService.createUserLvRestricted(new CreateUserRequest("Restricted", "Restricted", "Restricted", "Restricted"));
+	}
 }
